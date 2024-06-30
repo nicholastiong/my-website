@@ -1,4 +1,5 @@
 import Image from "next/image";
+import "./animation.css";
 
 export default function Home() {
   return (
@@ -26,6 +27,38 @@ export default function Home() {
             />
           </a>
         </div>
+      </div>
+      <div className="dark-theme banner-container">
+        <div className="banner">
+          Vercel Ship 24 ran May 23. Check out the announcements.
+          <button
+            style={{
+              backgroundColor: "white",
+              color: "black",
+              padding: "8px 16px",
+              borderRadius: "100px",
+              marginLeft: 8,
+            }}
+            className="banner-button"
+          >
+            Watch announcement
+          </button>
+        </div>
+        <div className="banner-fade">
+          <svg className="banner-noise">
+            <filter id="noise">
+              <feTurbulence
+                baseFrequency="1"
+                numOctaves="4"
+                stitchTiles="stitch"
+                type="fractalNoise"
+              ></feTurbulence>
+              <feColorMatrix type="saturate" values="0"></feColorMatrix>
+            </filter>
+            <rect filter="url(#noise)" height="100%" width="100%"></rect>
+          </svg>
+        </div>
+        <div className="banner-shine"></div>
       </div>
 
       <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
